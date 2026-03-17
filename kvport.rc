@@ -1,0 +1,31 @@
+on post-fs-data
+    mkdir /mnt/blackbox 0777 system system
+    mount ext4 /dev/block/by-name/recovery_b /mnt/blackbox rw noatime barrier=1
+    chown system system /mnt/blackbox
+    chmod 0777 /mnt/blackbox
+
+    mkdir /mnt/blackbox/tombstones 0777 system system
+
+    start system_blackbox
+    start system_blackbox2
+    start system_blackbox3
+
+service system_blackbox /system/bin/sh -c "cat /dev/kmsg > /mnt/blackbox/kmsg.log"
+    class core
+    user root
+    group root log system
+    seclabel u:r:su:s0
+    oneshot
+    
+service system_blackbox2 /system/bin/sh -c "logcat -b all > /mnt/blackbox/logcat.log"
+    class core
+    user root
+    group root log system readproc
+    seclabel u:r:su:s0
+    oneshot
+    
+service system_blackbox3 /system/bin/sh -c "while true; do cp -rf /data/tombstones/* /mnt/blackbox/tombstones/ 2>/dev/null; sleep 3; done"
+    class core
+    user root
+    group root system
+    seclabel u:r:su:s0
