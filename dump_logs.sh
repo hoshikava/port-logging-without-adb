@@ -1,4 +1,4 @@
-# @hoshikv @matejkoooo
+#start
 mkdir -p /mnt/blackbox
 mkdir -p /sdcard/kv_logs/
 mount -t ext4 /dev/block/by-name/recovery_b /mnt/blackbox
