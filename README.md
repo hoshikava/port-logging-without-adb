@@ -17,6 +17,7 @@ After boot your ports(atleast stuck bootanim), boot to your main/booted roms the
 ```console
 sh /sdcard/dump_logs.sh
 ```
+After you run this, logs will stored on /sdcard/kv_logs
 
 ## Notes
 You can modify which inactive block partition you want to put but never do to bootloader partition
