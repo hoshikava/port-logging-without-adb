@@ -1,5 +1,5 @@
 # port-logging-without-adb
-Get logcat, dmesg, and tombstones while porting any roms without adb via init(for you who have dead adb or use dsu to test)
+Get logcat, dmesg, and tombstones without adb
 
 
 What is this?
