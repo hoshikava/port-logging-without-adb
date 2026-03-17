@@ -11,7 +11,7 @@ Format your inactive block partition to ext4 first
 ```console
 mke2fs -t ext4 /dev/block/by-name/recovery_b
 ```
-Now put kvport.rc to /system/etc/init or inside kvport.rc copy then paste to /system/etc/init/hw/init.rc
+Now put kvport.rc to /system/etc/init or copy inside kvport.rc then paste to /system/etc/init/hw/init.rc
 
 After boot your ports(atleast stuck bootanim), boot to your main/booted roms then run
 ```console
