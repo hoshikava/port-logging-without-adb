@@ -25,3 +25,6 @@ You can modify which inactive block partition you want to put but never do to bo
 You maybe need permissive
 
 Tested, but i dont responsible for any bricked devices!
+
+## Credits
+matejkoo217
